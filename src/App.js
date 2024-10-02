@@ -26,26 +26,10 @@ function App() {
   };
 
   return (
-    <div style={{backgroundColor:'#c4c4c4'}} className="App">
-      {/* <header className="App-header">
-        <img src={Display} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* <Countapp/> */}
-     {/* <Apt/> */}
+    <div style={{backgroundColor:'#c4c4c4', height:'100vh'}} className="App">
 
-<div style={{ textAlign: 'left', padding: '20px' }}>
-    <div style={{ marginBottom: '20px'}}>
+<div style={{ textAlign: 'left'}}>
+    <div style={{ marginBottom: '5px',marginTop:'10px',marginBottom:'10px', backgroundColor:'white'}}>
       <button onClick={() => setPage('status')} style={{ margin: '5px' }}>Display</button>
       <button onClick={() => setPage('users')} style={{ margin: '5px' }}>Users</button>
       <button onClick={() => setPage('priority')} style={{ margin: '5px' }}>Priority</button>

@@ -1,109 +1,115 @@
 import React, { useState, useEffect } from 'react';
 
-// Simulated Card component for displaying tickets
-const Card = ({ name, logo, title, status }) => {
-  return (
-    <div style={{
-      border: '1px solid #ccc',
-      borderRadius: '8px',
-      margin: '10px',
-      padding: '10px',
-      backgroundColor: '#fff',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-    }}>
-      {/* First Row: Name and Logo */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ fontWeight: 'bold', fontSize: '16px' }}>{name}</div>
-        <div>{logo ? <img src={logo} alt={name} style={{ width: '30px', height: '30px' }} /> : null}</div>
-      </div>
-      
-      {/* Second Row: Title */}
-      <div style={{ marginTop: '10px', fontSize: '14px' }}>
-        {title}
-      </div>
-      
-      {/* Third Row: Footer/Status */}
-      <div style={{
-        marginTop: '10px',
-        fontSize: '12px',
-        color: '#555',
-        padding: '5px 0',
-        backgroundColor: '#f9f9f9',
-        textAlign: 'center'
-      }}>
-        {status}
-      </div>
-    </div>
-  );
-};
 
-// Main Page Component
-const UserTicketsPage = () => {
-  const [userTasksArray, setUserTasksArray] = useState([]);
+const header={
+  fontSize:'12px',
+  margin: '4px',
+  padding:'2px',
+  color: 'black',
+  fontWeight: 'bold',
+}
+
+const UsersPage = () => {
+  const [tickets, setTickets] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const fetchTasks = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch('https://api.quicksell.co/v1/internal/frontend-assignment');
+        const response = await fetch('https://api.quicksell.co/v1/internal/frontend-assignment'); // Replace this with your actual API endpoint
         const data = await response.json();
 
-        // Group tasks by user in an array of arrays
-        const tasksArray = [];
-        data.forEach(task => {
-          const userId = task.user_id; // Assuming task has a user_id property
-
-          // Find the existing entry for the user or create a new one
-          let userEntry = tasksArray.find(([id]) => id === userId);
-
-          if (!userEntry) {
-            // Create a new entry for the user if not found
-            userEntry = [userId, { name: task.user, tasks: [] }];
-            tasksArray.push(userEntry);
-          }
-
-          // Push the task to the user's task array
-          userEntry[1].tasks.push(task);
-        });
-
-        setUserTasksArray(tasksArray);
+        setTickets(data.tickets);
+        setUsers(data.users.filter(user => user.available)); // Filter for available users
       } catch (error) {
-        console.error('Error fetching tasks:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchTasks();
+    fetchData();
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>User Tickets</h1>
-
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-        {userTasksArray.length > 0 ? (
-          userTasksArray.map(([userId, userInfo]) => (
-            <div key={userId} style={{ flexBasis: '19%', padding: '10px', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '20px' }}>
-              <h2 style={{ textAlign: 'center' }}>{userInfo.name}</h2> {/* Display user name */}
-              
-              {/* Display tasks in a column for each user */}
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                {userInfo.tasks.map(task => (
-                  <Card
-                    key={task.id} // Ensure each task has a unique id
-                    name={userInfo.name} // User's name
-                    logo={task.logo} // Assuming task has a logo property
-                    title={task.title}
-                    status={task.status}
-                  />
-                ))}
-              </div>
+    <div style={{ }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        {users.map(user => (
+          <div key={user.id} style={{flex:'1', paddingRight:'2px ',borderRadius: '4px', marginBottom: '20px' }}>
+            <h2 style={header}>{user.name}</h2> {/* User name */}
+            
+            {/* Filter and display tickets belonging to the user */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {tickets.filter(ticket => ticket.userId === user.id).map(ticket => (
+                  <div style={{backgroundColor:'white', marginBottom:'4px',border: '1px solid #ccc', padding:'2px', borderRadius:'4px'}}>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '4px'
+                  }}>
+                    <div style={{
+                      fontWeight: 'bold',
+                      fontSize: '10px',
+                      color: '#333'
+                    }}>
+                      {ticket.id}
+                    </div>
+                    <div style={{
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      backgroundColor: '#c4c4c4',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      fontSize: '6px',
+                      fontWeight: 'bold',
+                      color: 'white'
+                    }}>
+                      AS
+                    </div>
+                  </div>
+            
+                  <div style={{
+                    fontSize: '10px',
+                    fontWeight: 'bold',
+                    marginBottom: '4px',
+                    color: '#000'
+                  }}>
+                    {ticket.title}
+                  </div>
+            
+                  {/* Row 3: Footer */}
+                  <div style={{
+                    fontSize: '8px',
+                    color: '#6c757d',
+                    backgroundColor: '#f1f3f5',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    textAlign: 'left',
+                    display: 'inline-block'
+                  }}>
+                    {ticket.tag} 
+                  </div>
+                  <div style={{
+                    fontSize: '8px',
+                    color: '#6c757d',
+                    backgroundColor: '#f1f3f5',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    textAlign: 'left',
+                    display: 'inline-block'
+                  }}>
+                   {ticket.priority}
+                  </div>
+                 
+                </div>
+              ))}
             </div>
-          ))
-        ) : (
-          <p>No tasks found.</p>
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default UserTicketsPage;
+export default UsersPage;

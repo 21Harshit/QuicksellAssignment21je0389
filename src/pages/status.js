@@ -36,11 +36,11 @@ const StatusPage = () => {
   },);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '2px' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
          
       {statuses.map(status => (
         
-        <div key={status} style={{ flex: 1, margin: '2px', borderRadius: '2px', padding: '5px' }}>
+        <div key={status} style={{ flex: 1, borderRadius: '2px', paddingRight:'2px' }}>
         <div style={header}>{status}</div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {tasks[status]?.map(task => (
