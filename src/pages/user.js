@@ -37,9 +37,9 @@ const UsersPage = () => {
             <h2 style={header}>{user.name}</h2> {/* User name */}
             
             {/* Filter and display tickets belonging to the user */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', padding:'10px' }}>
               {tickets.filter(ticket => ticket.userId === user.id).map(ticket => (
-                  <div style={{backgroundColor:'white', marginBottom:'4px',border: '1px solid #ccc', padding:'2px', borderRadius:'4px'}}>
+                  <div style={{backgroundColor:'white', marginBottom:'14px',border: '1px solid #ccc', padding:'2px', borderRadius:'4px'}}>
                   <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -47,33 +47,36 @@ const UsersPage = () => {
                     marginBottom: '4px'
                   }}>
                     <div style={{
-                      fontWeight: 'bold',
-                      fontSize: '10px',
-                      color: '#333'
+                     fontWeight: 'bold',
+                     paddingLeft:'4px',
+                     fontSize:'8px',
+                     color: '#333'
                     }}>
                       {ticket.id}
                     </div>
                     <div style={{
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      backgroundColor: '#c4c4c4',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      fontSize: '6px',
-                      fontWeight: 'bold',
-                      color: 'white'
+                       width: '24px',
+                       height: '24px',
+                       borderRadius: '50%',
+                       backgroundColor: '#c4c4c4',
+                       display: 'flex',
+                       justifyContent: 'center',
+                       alignItems: 'center',
+                       fontSize: '8px',
+                       fontWeight: 'bold',
+                       color: 'white'
                     }}>
                       AS
                     </div>
                   </div>
             
                   <div style={{
-                    fontSize: '10px',
+                    fontSize: '12px',
                     fontWeight: 'bold',
                     marginBottom: '4px',
-                    color: '#000'
+                    color: '#000',
+                    paddingLeft:'15px',
+                    paddingRight: '12px'
                   }}>
                     {ticket.title}
                   </div>
@@ -91,13 +94,14 @@ const UsersPage = () => {
                     {ticket.tag} 
                   </div>
                   <div style={{
-                    fontSize: '8px',
-                    color: '#6c757d',
-                    backgroundColor: '#f1f3f5',
-                    padding: '4px 8px',
-                    borderRadius: '4px',
-                    textAlign: 'left',
-                    display: 'inline-block'
+                   fontSize: '10px',
+                   color: 'grey',
+                   backgroundColor: '#f1f3f5',
+                   marginLeft:'10px',
+                   padding:'2px',
+                   borderRadius: '4px',
+                   textAlign: 'left',
+                   display: 'inline-block'
                   }}>
                    {ticket.priority}
                   </div>

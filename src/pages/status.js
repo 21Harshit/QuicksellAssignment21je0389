@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
-
 const header={
   fontSize:'12px',
   margin: '4px',
@@ -12,7 +10,7 @@ const header={
 
 const StatusPage = () => {
   const [tasks, setTasks] = useState({});
-  const statuses = ['Backlog', 'Todo', 'In progress', 'Done', 'Cancelled']; // Status categories
+  const statuses = ['Backlog', 'Todo', 'In progress', 'Done', 'Cancelled']; 
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -20,9 +18,8 @@ const StatusPage = () => {
         const response = await fetch('https://api.quicksell.co/v1/internal/frontend-assignment');
         const data = await response.json();
 
-        // Group tasks by status
         const groupedTasks = statuses.reduce((acc, status) => {
-          acc[status] = data.tickets.filter(task => task.status === status); // Adjust 'status' based on API response
+          acc[status] = data.tickets.filter(task => task.status === status); 
           return acc;
         }, {});
 
@@ -40,12 +37,12 @@ const StatusPage = () => {
          
       {statuses.map(status => (
         
-        <div key={status} style={{ flex: 1, borderRadius: '2px', paddingRight:'2px' }}>
+        <div key={status} style={{ flex: 1, borderRadius: '2px', padding:'15px' }}>
         <div style={header}>{status}</div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {tasks[status]?.map(task => (
              
-              <div style={{backgroundColor:'white', marginBottom:'4px',border: '1px solid #ccc', padding:'2px', borderRadius:'4px'}}>
+              <div style={{backgroundColor:'white', marginBottom:'14px',border: '1px solid #ccc', padding:'2px', borderRadius:'4px'}}>
               <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -54,7 +51,8 @@ const StatusPage = () => {
               }}>
                 <div style={{
                   fontWeight: 'bold',
-                  fontSize: '10px',
+                  paddingLeft:'4px',
+                  fontSize:'8px',
                   color: '#333'
                 }}>
                   {task.id}
@@ -67,7 +65,7 @@ const StatusPage = () => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  fontSize: '6px',
+                  fontSize: '8px',
                   fontWeight: 'bold',
                   color: 'white'
                 }}>
@@ -76,20 +74,22 @@ const StatusPage = () => {
               </div>
         
               <div style={{
-                fontSize: '10px',
+                fontSize: '12px',
                 fontWeight: 'bold',
                 marginBottom: '4px',
-                color: '#000'
+                color: '#000',
+                paddingLeft:'15px',
+                paddingRight: '12px'
               }}>
                 {task.title}
               </div>
         
-              {/* Row 3: Footer */}
               <div style={{
-                fontSize: '8px',
-                color: '#6c757d',
+                fontSize: '10px',
+                color: 'grey',
                 backgroundColor: '#f1f3f5',
-                padding: '4px 8px',
+                marginLeft:'10px',
+                padding:'2px',
                 borderRadius: '4px',
                 textAlign: 'left',
                 display: 'inline-block'
