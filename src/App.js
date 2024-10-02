@@ -29,7 +29,7 @@ function App() {
     <div style={{backgroundColor:'#c4c4c4', height:'100vh'}} className="App">
 
 <div style={{ textAlign: 'left'}}>
-    <div style={{ marginBottom: '5px',marginTop:'10px',marginBottom:'10px', backgroundColor:'white'}}>
+    <div style={{marginTop:'10px',marginBottom:'10px', backgroundColor:'white'}}>
       <button onClick={() => setPage('status')} style={{ margin: '5px' }}>Display</button>
       <button onClick={() => setPage('users')} style={{ margin: '5px' }}>Users</button>
       <button onClick={() => setPage('priority')} style={{ margin: '5px' }}>Priority</button>
