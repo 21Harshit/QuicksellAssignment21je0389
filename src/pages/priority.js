@@ -33,316 +33,318 @@ const Papp = () => {
   }
   
   return (
-    // <div style={{ display: 'flex', justifyContent: 'space-between' }} >
-    //   {/* No Priority Column */}
+    <div style={{ display: 'flex', justifyContent: 'space-between' }} >
+      {/* No Priority Column */}
 
-    //   <div  class="card" >
-    //   <div style={header}>No priority</div>
-    //     {noPriorityTasks.map(task => (
-    //        <div class="show">
-    //        <div style={{
-    //          display: 'flex',
-    //          justifyContent: 'space-between',
-    //          alignItems: 'center',
-    //          marginBottom: '4px'
-    //        }}>
-    //          <div style={{
-    //            fontWeight: 'bold',
-    //            paddingLeft:'4px',
-    //            fontSize:'8px',
-    //            color: '#333'
-    //          }}>
-    //            {task.id}
-    //          </div>
-    //          <div style={{
-    //            width: '24px',
-    //            height: '24px',
-    //            borderRadius: '50%',
-    //            backgroundColor: '#c4c4c4',
-    //            display: 'flex',
-    //            justifyContent: 'center',
-    //            alignItems: 'center',
-    //            fontSize: '8px',
-    //            fontWeight: 'bold',
-    //            color: 'white'
-    //          }}>
-    //            AS
-    //          </div>
-    //        </div>
+      <div  class="card" >
+      <div style={header}>No priority</div>
+        {noPriorityTasks.map(task => (
+           <div class="show">
+           <div style={{
+             display: 'flex',
+             justifyContent: 'space-between',
+             alignItems: 'center',
+             marginBottom: '4px'
+           }}>
+             <div style={{
+               fontWeight: 'bold',
+               paddingLeft:'4px',
+               fontSize:'8px',
+               color: '#333'
+             }}>
+               {task.id}
+             </div>
+             <div style={{
+               width: '24px',
+               height: '24px',
+               borderRadius: '50%',
+               backgroundColor: '#c4c4c4',
+               display: 'flex',
+               justifyContent: 'center',
+               alignItems: 'center',
+               fontSize: '8px',
+               fontWeight: 'bold',
+               color: 'white'
+             }}>
+               AS
+             </div>
+           </div>
      
-    //        <div style={{
-    //          fontSize: '12px',
-    //          fontWeight: 'bold',
-    //          marginBottom: '4px',
-    //          color: '#000',
-    //          paddingLeft:'15px',
-    //          paddingRight: '12px'
-    //        }}>
-    //          {task.title}
-    //        </div>
+           <div style={{
+             fontSize: '12px',
+             fontWeight: 'bold',
+             marginBottom: '4px',
+             color: '#000',
+             paddingLeft:'15px',
+             paddingRight: '12px'
+           }}>
+             {task.title}
+           </div>
      
-    //        <div style={{
-    //          fontSize: '10px',
-    //          color: 'grey',
-    //          backgroundColor: '#f1f3f5',
-    //          marginLeft:'10px',
-    //          padding:'2px',
-    //          borderRadius: '4px',
-    //          textAlign: 'left',
-    //          display: 'inline-block'
-    //        }}>
-    //          {task.tag}
-    //        </div>
-    //      </div>
-    //     ))}
-    //   </div>
+           <div style={{
+             fontSize: '10px',
+             color: 'grey',
+             backgroundColor: '#f1f3f5',
+             marginLeft:'10px',
+             padding:'2px',
+             borderRadius: '4px',
+             textAlign: 'left',
+             display: 'inline-block'
+           }}>
+             {task.tag}
+           </div>
+         </div>
+        ))}
+      </div>
 
-    //   {/* Urgent Priority Column */}
-    //   <div class="card">
-    //     <div style={header}>Urgent</div>
-    //     {urgentTasks.map(task => (
-    //       <div class="show">
-    //       <div style={{
-    //         display: 'flex',
-    //         justifyContent: 'space-between',
-    //         alignItems: 'center',
-    //         marginBottom: '4px'
-    //       }}>
-    //         <div style={{
-    //           fontWeight: 'bold',
-    //           paddingLeft:'4px',
-    //           fontSize:'8px',
-    //           color: '#333'
-    //         }}>
-    //           {task.id}
-    //         </div>
-    //         <div style={{
-    //           width: '24px',
-    //           height: '24px',
-    //           borderRadius: '50%',
-    //           backgroundColor: '#c4c4c4',
-    //           display: 'flex',
-    //           justifyContent: 'center',
-    //           alignItems: 'center',
-    //           fontSize: '8px',
-    //           fontWeight: 'bold',
-    //           color: 'white'
-    //         }}>
-    //           AS
-    //         </div>
-    //       </div>
+      {/* Urgent Priority Column */}
+      <div class="card">
+        <div style={header}>Urgent</div>
+        {urgentTasks.map(task => (
+          <div class="show">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '4px'
+          }}>
+            <div style={{
+              fontWeight: 'bold',
+              paddingLeft:'4px',
+              fontSize:'8px',
+              color: '#333'
+            }}>
+              {task.id}
+            </div>
+            <div style={{
+              width: '24px',
+              height: '24px',
+              borderRadius: '50%',
+              backgroundColor: '#c4c4c4',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              fontSize: '8px',
+              fontWeight: 'bold',
+              color: 'white'
+            }}>
+              AS
+            </div>
+          </div>
     
-    //       <div style={{
-    //         fontSize: '12px',
-    //         fontWeight: 'bold',
-    //         marginBottom: '4px',
-    //         color: '#000',
-    //         paddingLeft:'15px',
-    //         paddingRight: '12px'
-    //       }}>
-    //         {task.title}
-    //       </div>
+          <div style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            marginBottom: '4px',
+            color: '#000',
+            paddingLeft:'15px',
+            paddingRight: '12px'
+          }}>
+            {task.title}
+          </div>
     
-    //       <div style={{
-    //         fontSize: '10px',
-    //         color: 'grey',
-    //         backgroundColor: '#f1f3f5',
-    //         marginLeft:'10px',
-    //         padding:'2px',
-    //         borderRadius: '4px',
-    //         textAlign: 'left',
-    //         display: 'inline-block'
-    //       }}>
-    //         {task.tag}
-    //       </div>
-    //     </div>
-    //     ))}
-    //   </div>
+          <div style={{
+            fontSize: '10px',
+            color: 'grey',
+            backgroundColor: '#f1f3f5',
+            marginLeft:'10px',
+            padding:'2px',
+            borderRadius: '4px',
+            textAlign: 'left',
+            display: 'inline-block'
+          }}>
+            {task.tag}
+          </div>
+        </div>
+        ))}
+      </div>
 
-    //   {/* High Priority Column */}
-    //   <div class="card">
-    //   <div style={header}>High</div>
-    //     {highPriorityTasks.map(task => (
-    //      <div class="show">
-    //      <div style={{
-    //        display: 'flex',
-    //        justifyContent: 'space-between',
-    //        alignItems: 'center',
-    //        marginBottom: '4px'
-    //      }}>
-    //        <div style={{
-    //          fontWeight: 'bold',
-    //          paddingLeft:'4px',
-    //          fontSize:'8px',
-    //          color: '#333'
-    //        }}>
-    //          {task.id}
-    //        </div>
-    //        <div style={{
-    //          width: '24px',
-    //          height: '24px',
-    //          borderRadius: '50%',
-    //          backgroundColor: '#c4c4c4',
-    //          display: 'flex',
-    //          justifyContent: 'center',
-    //          alignItems: 'center',
-    //          fontSize: '8px',
-    //          fontWeight: 'bold',
-    //          color: 'white'
-    //        }}>
-    //          AS
-    //        </div>
-    //      </div>
+      {/* High Priority Column */}
+      <div class="card">
+      <div style={header}>High</div>
+        {highPriorityTasks.map(task => (
+         <div class="show">
+         <div style={{
+           display: 'flex',
+           justifyContent: 'space-between',
+           alignItems: 'center',
+           marginBottom: '4px'
+         }}>
+           <div style={{
+             fontWeight: 'bold',
+             paddingLeft:'4px',
+             fontSize:'8px',
+             color: '#333'
+           }}>
+             {task.id}
+           </div>
+           <div style={{
+             width: '24px',
+             height: '24px',
+             borderRadius: '50%',
+             backgroundColor: '#c4c4c4',
+             display: 'flex',
+             justifyContent: 'center',
+             alignItems: 'center',
+             fontSize: '8px',
+             fontWeight: 'bold',
+             color: 'white'
+           }}>
+             AS
+           </div>
+         </div>
    
-    //      <div style={{
-    //        fontSize: '12px',
-    //        fontWeight: 'bold',
-    //        marginBottom: '4px',
-    //        color: '#000',
-    //        paddingLeft:'15px',
-    //        paddingRight: '12px'
-    //      }}>
-    //        {task.title}
-    //      </div>
+         <div style={{
+           fontSize: '12px',
+           fontWeight: 'bold',
+           marginBottom: '4px',
+           color: '#000',
+           paddingLeft:'15px',
+           paddingRight: '12px'
+         }}>
+           {task.title}
+         </div>
    
-    //      <div style={{
-    //        fontSize: '10px',
-    //        color: 'grey',
-    //        backgroundColor: '#f1f3f5',
-    //        marginLeft:'10px',
-    //        padding:'2px',
-    //        borderRadius: '4px',
-    //        textAlign: 'left',
-    //        display: 'inline-block'
-    //      }}>
-    //        {task.tag}
-    //      </div>
-    //    </div>
-    //     ))}
-    //   </div>
+         <div style={{
+           fontSize: '10px',
+           color: 'grey',
+           backgroundColor: '#f1f3f5',
+           marginLeft:'10px',
+           padding:'2px',
+           borderRadius: '4px',
+           textAlign: 'left',
+           display: 'inline-block'
+         }}>
+           {task.tag}
+         </div>
+       </div>
+        ))}
+      </div>
 
-    //   {/* Medium Priority Column */}
-    //   <div class="card">
-    //   <div style={header}>Medium</div>
-    //     {mediumPriorityTasks.map(task => (
-    //     <div class="show">
-    //     <div style={{
-    //       display: 'flex',
-    //       justifyContent: 'space-between',
-    //       alignItems: 'center',
-    //       marginBottom: '4px'
-    //     }}>
-    //       <div style={{
-    //         fontWeight: 'bold',
-    //         paddingLeft:'4px',
-    //         fontSize:'8px',
-    //         color: '#333'
-    //       }}>
-    //         {task.id}
-    //       </div>
-    //       <div style={{
-    //         width: '24px',
-    //         height: '24px',
-    //         borderRadius: '50%',
-    //         backgroundColor: '#c4c4c4',
-    //         display: 'flex',
-    //         justifyContent: 'center',
-    //         alignItems: 'center',
-    //         fontSize: '8px',
-    //         fontWeight: 'bold',
-    //         color: 'white'
-    //       }}>
-    //         AS
-    //       </div>
-    //     </div>
+      {/* Medium Priority Column */}
+      <div class="card">
+      <div style={header}>Medium</div>
+        {mediumPriorityTasks.map(task => (
+        <div class="show">
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '4px'
+        }}>
+          <div style={{
+            fontWeight: 'bold',
+            paddingLeft:'4px',
+            fontSize:'8px',
+            color: '#333'
+          }}>
+            {task.id}
+          </div>
+          <div style={{
+            width: '24px',
+            height: '24px',
+            borderRadius: '50%',
+            backgroundColor: '#c4c4c4',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '8px',
+            fontWeight: 'bold',
+            color: 'white'
+          }}>
+            AS
+          </div>
+        </div>
   
-    //     <div style={{
-    //       fontSize: '12px',
-    //       fontWeight: 'bold',
-    //       marginBottom: '4px',
-    //       color: '#000',
-    //       paddingLeft:'15px',
-    //       paddingRight: '12px'
-    //     }}>
-    //       {task.title}
-    //     </div>
+        <div style={{
+          fontSize: '12px',
+          fontWeight: 'bold',
+          marginBottom: '4px',
+          color: '#000',
+          paddingLeft:'15px',
+          paddingRight: '12px'
+        }}>
+          {task.title}
+        </div>
   
-    //     <div style={{
-    //       fontSize: '10px',
-    //       color: 'grey',
-    //       backgroundColor: '#f1f3f5',
-    //       marginLeft:'10px',
-    //       padding:'2px',
-    //       borderRadius: '4px',
-    //       textAlign: 'left',
-    //       display: 'inline-block'
-    //     }}>
-    //       {task.tag}
-    //     </div>
-    //   </div>
-    //     ))}
-    //   </div>
+        <div style={{
+          fontSize: '10px',
+          color: 'grey',
+          backgroundColor: '#f1f3f5',
+          marginLeft:'10px',
+          padding:'2px',
+          borderRadius: '4px',
+          textAlign: 'left',
+          display: 'inline-block'
+        }}>
+          {task.tag}
+        </div>
+      </div>
+        ))}
+      </div>
 
-    //   {/* Low Priority Column */}
-    //   <div class="card">
-    //   <div style={header}>Low</div>
-    //     {lowPriorityTasks.map(task => (
-    //      <div class="show">
-    //      <div style={{
-    //        display: 'flex',
-    //        justifyContent: 'space-between',
-    //        alignItems: 'center',
-    //        marginBottom: '4px'
-    //      }}>
-    //        <div style={{
-    //          fontWeight: 'bold',
-    //          paddingLeft:'4px',
-    //          fontSize:'8px',
-    //          color: '#333'
-    //        }}>
-    //          {task.id}
-    //        </div>
-    //        <div style={{
-    //          width: '24px',
-    //          height: '24px',
-    //          borderRadius: '50%',
-    //          backgroundColor: '#c4c4c4',
-    //          display: 'flex',
-    //          justifyContent: 'center',
-    //          alignItems: 'center',
-    //          fontSize: '8px',
-    //          fontWeight: 'bold',
-    //          color: 'white'
-    //        }}>
-    //          AS
-    //        </div>
-    //      </div>
+      {/* Low Priority Column */}
+      <div class="card">
+      <div style={header}>Low</div>
+        {lowPriorityTasks.map(task => (
+         <div class="show">
+         <div style={{
+           display: 'flex',
+           justifyContent: 'space-between',
+           alignItems: 'center',
+           marginBottom: '4px'
+         }}>
+           <div style={{
+             fontWeight: 'bold',
+             paddingLeft:'4px',
+             fontSize:'8px',
+             color: '#333'
+           }}>
+             {task.id}
+           </div>
+           <div style={{
+             width: '24px',
+             height: '24px',
+             borderRadius: '50%',
+             backgroundColor: '#c4c4c4',
+             display: 'flex',
+             justifyContent: 'center',
+             alignItems: 'center',
+             fontSize: '8px',
+             fontWeight: 'bold',
+             color: 'white'
+           }}>
+             AS
+           </div>
+         </div>
    
-    //      <div style={{
-    //        fontSize: '12px',
-    //        fontWeight: 'bold',
-    //        marginBottom: '4px',
-    //        color: '#000',
-    //        paddingLeft:'15px',
-    //        paddingRight: '12px'
-    //      }}>
-    //        {task.title}
-    //      </div>
+         <div style={{
+           fontSize: '12px',
+           fontWeight: 'bold',
+           marginBottom: '4px',
+           color: '#000',
+           paddingLeft:'15px',
+           paddingRight: '12px'
+         }}>
+           {task.title}
+         </div>
    
-    //      <div style={{
-    //        fontSize: '10px',
-    //        color: 'grey',
-    //        backgroundColor: '#f1f3f5',
-    //        marginLeft:'10px',
-    //        padding:'2px',
-    //        borderRadius: '4px',
-    //        textAlign: 'left',
-    //        display: 'inline-block'
-    //      }}>
-    //        {task.tag}
-    //      </div>
-    //    </div>
-    //     ))}
-    //   </div>
-    // </div>
-
+         <div style={{
+           fontSize: '10px',
+           color: 'grey',
+           backgroundColor: '#f1f3f5',
+           marginLeft:'10px',
+           padding:'2px',
+           borderRadius: '4px',
+           textAlign: 'left',
+           display: 'inline-block'
+         }}>
+           {task.tag}
+         </div>
+       </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+  export default  Papp;
