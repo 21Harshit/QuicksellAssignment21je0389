@@ -33,7 +33,7 @@ const StatusPage = () => {
     };
 
     fetchTasks();
-  }, []);
+  },);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '2px' }}>

@@ -3,7 +3,7 @@ import './App.css';
 // import Display from './icons_FEtask/Display.svg'
 // import Countapp from './components/check';
 // import Apt from './components/groupcheck';
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 
 import StatusPage from './pages/status';
 import Papp from './pages/priority';
